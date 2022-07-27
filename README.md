@@ -6,9 +6,9 @@ Learning about [RX Java 3](https://reactivex.io/documentation/operators.html)
 implementation "io.reactivex.rxjava3:rxjava:3.1.5"
 ```
 
-#### Operators
+### Creationals Operators
 
-<details open><summary><b>Just</b> - <a href="https://reactivex.io/documentation/operators/just.html">Observable.just()</a> </summary>
+<details open><summary><b>Just</b> - <a href="https://reactivex.io/documentation/operators/creational/just.html">Observable.just()</a> </summary>
 
 > _Convert an object or a set of objects into an Observable. Check_ <code>Just().sample()</code> [📌](src/main/java/com/vansuita/rxjava/operators/Just.kt)
 
@@ -24,7 +24,7 @@ Observable.just(1, "Two", false, Date()).subscribe { Log.d(TAG, "onNext: $it") }
 </details>
 
 
-<details><summary><b>FromArray</b> - <a href="https://reactivex.io/documentation/operators/from.html">Observable.fromArray()</a> </summary>
+<details><summary><b>FromArray</b> - <a href="https://reactivex.io/documentation/operators/creational/from.html">Observable.fromArray()</a> </summary>
 
 > _Converts an array into an Observable that emits those items. Check_ <code>FromArray().sample()</code> [📌](src/main/java/com/vansuita/rxjava/operators/FromArray.kt)
 
@@ -39,7 +39,7 @@ Observable.fromArray("First", "Second", "Third").subscribe { Log.d(TAG, "onNext:
 </details>
 
 
-<details><summary><b>FromIterable</b> - <a href="https://reactivex.io/documentation/operators/from.html">Observable.fromIterable()</a> </summary>
+<details><summary><b>FromIterable</b> - <a href="https://reactivex.io/documentation/operators/creational/from.html">Observable.fromIterable()</a> </summary>
 
 > _Converts an collection into an Observable that emits the items as sequence. Check_ <code>FromIterable().sample()</code> [📌](src/main/java/com/vansuita/rxjava/operators/FromIterable.kt)
 
@@ -52,7 +52,7 @@ Observable.fromIterable(listOf("One", "Two", "Three")).subscribe { Log.d(TAG, "o
 ```
 </details>
 
-<details><summary><b>Range</b> - <a href="https://reactivex.io/documentation/operators/range.html">Observable.range()</a> </summary>
+<details><summary><b>Range</b> - <a href="https://reactivex.io/documentation/operators/creational/range.html">Observable.range()</a> </summary>
 
 > _Returns an Observable that emits a sequence of Integers within a specified range. Check_ <code>Range().sample()</code> [📌](src/main/java/com/vansuita/rxjava/operators/Range.kt)
 
@@ -65,11 +65,62 @@ Observable.range(5, 3).subscribe { Log.d(TAG, "onNext: $it") }
 ```
 </details>
 
+<details><summary><b>Repeat</b> - <a href="https://reactivex.io/documentation/operators/creational/repeat.html">Observable.repeat()</a> </summary>
+
+> _Returns an Observable that repeats the sequence of items emitted by the current Observable at most count times. Check_ <code>Repeat().sample()</code> [📌](src/main/java/com/vansuita/rxjava/operators/Repeat.kt)
+
+```kotlin
+Observable.just("My Text").repeat(2).subscribe { Log.d(TAG, "onNext: $it") }
+
+//onNext: My Text
+//onNext: My Text
+```
+</details>
+
+<details><summary><b>Interval</b> - <a href="https://reactivex.io/documentation/operators/interval.html">Observable.interval()</a> </summary>
+
+> _Returns an Observable that emits a sequential number every specified interval of time. On Android devices works even in background. Check_ <code>Interval().sample()</code> [📌](src/main/java/com/vansuita/rxjava/operators/creational/Interval.kt)
+
+```kotlin
+Observable.interval(1, TimeUnit.SECONDS).subscribe { Log.d(TAG, "onNext: Hit") }
+
+//onNext: Hit
+//onNext: Hit
+//onNext: Hit
+//onNext: Hit
+//onNext: Hit
+//onNext: Hit
+//... and continues
+```
+</details>
+
+
+### Conditionals Operators
+
+<details><summary><b>TakeWhile</b> - <a href="https://reactivex.io/documentation/operators/takewhile.html">Observable.takeWhile()</a> </summary>
+
+> _While the condition is satisfied, emits the items by the Observable. Check_ <code>TakeWhile().sample()</code> [📌](src/main/java/com/vansuita/rxjava/operators/conditional/TakeWhile.kt)
+
+```kotlin
+Observable
+    .interval(1, TimeUnit.SECONDS)
+    .takeWhile { it <= 3 }
+    .subscribe { 
+        Log.d(TAG, "onNext: $it - Hit")
+    }
+
+//onNext: 0 - Hit
+//onNext: 1 - Hit
+//onNext: 2 - Hit
+//onNext: 3 - Hit
+```
+</details>
+
+
 -----
 
 
 ```kotlin   
-     Operators().repeat()
    Operators().interval()
    Operators().intervalWithTakeWhile()
    Operators().timer()
