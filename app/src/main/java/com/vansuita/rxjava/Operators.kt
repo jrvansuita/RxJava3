@@ -9,24 +9,6 @@ import io.reactivex.rxjava3.core.Observable
 
 class Operators {
 
-
-    fun filter() {
-        class User(val name: String, val age: Int)
-
-        val users =
-            listOf(User("Bernardo", 4), User("Matheus", 2), User("Paula", 27), User("Junior", 30))
-
-        Observable.fromIterable(users)
-            .filter { it.age < 10 }
-            .subscribe({
-                Log.d(TAG, "onNext: ${it.name} - ${it.age}")
-            }, {
-                Log.d(TAG, "onError $it")
-            }, {
-                Log.d(TAG, "onComplete")
-            })
-    }
-
     fun last() {
         class User(val name: String, val age: Int)
 

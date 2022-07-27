@@ -7,7 +7,7 @@ import io.reactivex.rxjava3.disposables.Disposable
 
 class Create : Operator() {
     override fun sample(): Disposable {
-        Observable.create {
+        return Observable.create {
             try {
                 for (i in 1..5) {
                     it.onNext(i)

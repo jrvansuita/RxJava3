@@ -8,15 +8,15 @@ import io.reactivex.rxjava3.disposables.Disposable
 
 class FromIterable : Operator() {
 
+    override fun <T> with() = listOf("One", "Two", "Three")
+
     override fun sample(): Disposable {
-        return Observable.fromIterable(listOf("One", "Two", "Three"))
+        return Observable.fromIterable(this.with<List<String>>())
             .subscribe { Log.d(TAG, "onNext: $it") }
     }
 
     override fun detailedSample() {
-        val list = mutableListOf("One", "Two", "Three")
-
-        val observable = Observable.fromIterable(list)
+        val observable = Observable.fromIterable(this.with<List<String>>())
 
         val observer = object : Observer<String> {
             override fun onSubscribe(d: Disposable) {

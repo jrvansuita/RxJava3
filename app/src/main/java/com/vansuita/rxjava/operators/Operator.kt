@@ -9,12 +9,17 @@ abstract class Operator : Contract {
         const val TAG = "TAG"
     }
 
+    override fun <T : Any?> with(): Any? {
+        TODO("Not yet implemented")
+    }
+
     override fun detailedSample() {
         TODO("Not implemented here")
     }
 }
 
 interface Contract {
+    fun <T : Any?> with(): Any?
     fun sample(): Disposable
     fun detailedSample()
 }

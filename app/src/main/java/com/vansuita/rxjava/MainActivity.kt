@@ -2,7 +2,7 @@ package com.vansuita.rxjava
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.vansuita.rxjava.operators.creational.Create
+import com.vansuita.rxjava.operators.filteral.Filter
 
 class MainActivity : AppCompatActivity() {
 
@@ -45,9 +45,13 @@ class MainActivity : AppCompatActivity() {
         //Timer().detailedSample()
 
         //Will create a fresh instance of ObservableEmitter every time a subscriber start listening to the scope implementation result.
-        Create().sample()
+        //Create().sample()
 
-//        Operators().create()
+        //Filters items emitted by the current Observable
+        Filter().sample()
+        //Filter().detailedSample()
+
+
 //        Operators().filter()
 //        Operators().last()
 //        Operators().distinct()
