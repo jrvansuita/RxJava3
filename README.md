@@ -1,7 +1,8 @@
 # RxJava3 Study
 
-Learning about [RX Java 3](https://reactivex.io/documentation/operators.html)
+[RXJava](https://reactivex.io/documentation/operators.html) is a reactive programming library for implementing easy asynchronous code by using Observer pattern, Iterator pattern and functional programming. I'm currently using it in some projects and intent keep this repo updated as I start using any other feature by this lib.
 
+### Dependency
 ```gradle
 implementation "io.reactivex.rxjava3:rxjava:3.1.5"
 ```
