@@ -11,7 +11,7 @@ implementation "io.reactivex.rxjava3:rxjava:3.1.5"
 
 <details open><summary><b>Just</b> - <a href="https://reactivex.io/documentation/operators/just.html">Observable.just()</a> </summary>
 
-> _Convert an object or a set of objects into an Observable. Check_ <code>Just().sample()</code> [📌](src/main/java/com/vansuita/rxjava/operators/creational/Just.kt)
+> _Convert an object or a set of objects into an Observable. Check_ <code>Just().sample()</code> [📌](app/src/main/java/com/vansuita/rxjava/operators/creational/Just.kt)
 
 ```kotlin
 Observable.just(1, "Two", false, Date()).subscribe { Log.d(TAG, "onNext: $it") }
@@ -26,7 +26,7 @@ Observable.just(1, "Two", false, Date()).subscribe { Log.d(TAG, "onNext: $it") }
 
 <details open><summary><b>Create</b> - <a href="https://reactivex.io/documentation/operators/create.html">Observable.create()</a> </summary>
 
-> _Will create a fresh instance of ObservableEmitter every time a subscriber start listening to the scope implementation result.. Check_ <code>Create().sample()</code> [📌](src/main/java/com/vansuita/rxjava/operators/creational/Create.kt)
+> _Will create a fresh instance of ObservableEmitter every time a subscriber start listening to the scope implementation result.. Check_ <code>Create().sample()</code> [📌](app/src/main/java/com/vansuita/rxjava/operators/creational/Create.kt)
 
 ```kotlin
 Observable.create {
@@ -60,7 +60,7 @@ Observable.create {
 
 <details><summary><b>FromArray</b> - <a href="https://reactivex.io/documentation/operators/from.html">Observable.fromArray()</a> </summary>
 
-> _Converts an array into an Observable that emits those items. Check_ <code>FromArray().sample()</code> [📌](src/main/java/com/vansuita/rxjava/operators/creational/FromArray.kt)
+> _Converts an array into an Observable that emits those items. Check_ <code>FromArray().sample()</code> [📌](app/src/main/java/com/vansuita/rxjava/operators/creational/FromArray.kt)
 
 ```kotlin
 Observable.fromArray("First", "Second", "Third").subscribe { Log.d(TAG, "onNext: $it") }
@@ -75,7 +75,7 @@ Observable.fromArray("First", "Second", "Third").subscribe { Log.d(TAG, "onNext:
 
 <details><summary><b>FromIterable</b> - <a href="https://reactivex.io/documentation/operators/from.html">Observable.fromIterable()</a> </summary>
 
-> _Converts an collection into an Observable that emits the items as sequence. Check_ <code>FromIterable().sample()</code> [📌](src/main/java/com/vansuita/rxjava/operators/creational/FromIterable.kt)
+> _Converts an collection into an Observable that emits the items as sequence. Check_ <code>FromIterable().sample()</code> [📌](app/src/main/java/com/vansuita/rxjava/operators/creational/FromIterable.kt)
 
 ```kotlin
 Observable.fromIterable(listOf("One", "Two", "Three")).subscribe { Log.d(TAG, "onNext: $it") }
@@ -88,7 +88,7 @@ Observable.fromIterable(listOf("One", "Two", "Three")).subscribe { Log.d(TAG, "o
 
 <details><summary><b>Range</b> - <a href="https://reactivex.io/documentation/operators/range.html">Observable.range()</a> </summary>
 
-> _Returns an Observable that emits a sequence of Integers within a specified range. Check_ <code>Range().sample()</code> [📌](src/main/java/com/vansuita/rxjava/operators/creational/Range.kt)
+> _Returns an Observable that emits a sequence of Integers within a specified range. Check_ <code>Range().sample()</code> [📌](app/src/main/java/com/vansuita/rxjava/operators/creational/Range.kt)
 
 ```kotlin
 Observable.range(5, 3).subscribe { Log.d(TAG, "onNext: $it") }
@@ -101,7 +101,7 @@ Observable.range(5, 3).subscribe { Log.d(TAG, "onNext: $it") }
 
 <details><summary><b>Repeat</b> - <a href="https://reactivex.io/documentation/operators/repeat.html">Observable.repeat()</a> </summary>
 
-> _Returns an Observable that repeats the sequence of items emitted by the current Observable at most count times. Check_ <code>Repeat().sample()</code> [📌](src/main/java/com/vansuita/rxjava/operators/creational/Repeat.kt)
+> _Returns an Observable that repeats the sequence of items emitted by the current Observable at most count times. Check_ <code>Repeat().sample()</code> [📌](app/src/main/java/com/vansuita/rxjava/operators/creational/Repeat.kt)
 
 ```kotlin
 Observable.just("My Text").repeat(2).subscribe { Log.d(TAG, "onNext: $it") }
@@ -113,7 +113,7 @@ Observable.just("My Text").repeat(2).subscribe { Log.d(TAG, "onNext: $it") }
 
 <details><summary><b>Interval</b> - <a href="https://reactivex.io/documentation/operators/interval.html">Observable.interval()</a> </summary>
 
-> _Emits a sequential number every specified interval of time. On Android devices works even in background. Check_ <code>Interval().sample()</code> [📌](src/main/java/com/vansuita/rxjava/operators/creational/Interval.kt)
+> _Emits a sequential number every specified interval of time. On Android devices works even in background. Check_ <code>Interval().sample()</code> [📌](app/src/main/java/com/vansuita/rxjava/operators/creational/Interval.kt)
 
 ```kotlin
 Observable.interval(1, TimeUnit.SECONDS).subscribe { Log.d(TAG, "onNext: Hit") }
@@ -131,7 +131,7 @@ Observable.interval(1, TimeUnit.SECONDS).subscribe { Log.d(TAG, "onNext: Hit") }
 
 <details><summary><b>Timer</b> - <a href="https://reactivex.io/documentation/operators/timer.html">Observable.timer()</a> </summary>
 
-> _Emits one single time after a specified delay. Check_ <code>Timer().sample()</code> [📌](src/main/java/com/vansuita/rxjava/operators/creational/Timer.kt)
+> _Emits one single time after a specified delay. Check_ <code>Timer().sample()</code> [📌](app/src/main/java/com/vansuita/rxjava/operators/creational/Timer.kt)
 
 ```kotlin
 Observable.timer(2, TimeUnit.SECONDS).subscribe { Log.d(TAG, "onNext: delayed by 2 seconds") }
@@ -145,7 +145,7 @@ Observable.timer(2, TimeUnit.SECONDS).subscribe { Log.d(TAG, "onNext: delayed by
 
 <details><summary><b>TakeWhile</b> - <a href="https://reactivex.io/documentation/operators/takewhile.html">Observable.takeWhile()</a> </summary>
 
-> _While the condition is satisfied, emits the items by the Observable. Check_ <code>TakeWhile().sample()</code> [📌](src/main/java/com/vansuita/rxjava/operators/conditional/TakeWhile.kt)
+> _While the condition is satisfied, emits the items by the Observable. Check_ <code>TakeWhile().sample()</code> [📌](app/src/main/java/com/vansuita/rxjava/operators/conditional/TakeWhile.kt)
 
 ```kotlin
 Observable
