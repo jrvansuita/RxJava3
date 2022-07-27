@@ -2,6 +2,7 @@ package com.vansuita.rxjava
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.vansuita.rxjava.operators.Range
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,8 +24,10 @@ class MainActivity : AppCompatActivity() {
         //FromIterable().sample()
         //FromIterable().detailedSample()
 
+        //Returns an Observable that emits a sequence of Integers within a specified range.
+        Range().sample()
 
-//        Operators().fromIterable()
+
 //        Operators().range()
 //        Operators().repeat()
 //        Operators().interval()

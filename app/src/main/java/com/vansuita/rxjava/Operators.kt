@@ -11,17 +11,6 @@ import java.util.concurrent.TimeUnit
 class Operators {
 
 
-    fun range() {
-        Observable.range(5, 5)
-            .subscribe({
-                Log.d(TAG, "onNext: $it")
-            }, {
-                Log.d(TAG, "onError $it")
-            }, {
-                Log.d(TAG, "onComplete")
-            })
-    }
-
     fun repeat() {
         Observable.range(40, 5)
             .repeat(3)

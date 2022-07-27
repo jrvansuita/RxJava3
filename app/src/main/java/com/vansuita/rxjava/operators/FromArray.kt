@@ -1,7 +1,6 @@
-package com.vansuita.rxjava.operators.just
+package com.vansuita.rxjava.operators
 
 import android.util.Log
-import com.vansuita.rxjava.operators.Operator
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.core.Observer
 import io.reactivex.rxjava3.disposables.Disposable
