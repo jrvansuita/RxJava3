@@ -2,7 +2,7 @@ package com.vansuita.rxjava
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.vansuita.rxjava.operators.Range
+import com.vansuita.rxjava.operators.conditional.TakeWhile
 
 class MainActivity : AppCompatActivity() {
 
@@ -25,11 +25,22 @@ class MainActivity : AppCompatActivity() {
         //FromIterable().detailedSample()
 
         //Returns an Observable that emits a sequence of Integers within a specified range.
-        Range().sample()
+        //Range().sample()
+        //Range().detailedSample()
+
+        //Returns an Observable that repeats the sequence of items emitted by the current Observable at most count times.
+        //Repeat().sample()
+        //Repeat().detailedSample()
+
+        //Returns an Observable that emits a sequential number every specified interval of time.
+        //Interval().sample()
+        //Interval().detailedSample()
+
+        //While the condition is satisfied, emits the items by the Observable
+        TakeWhile().sample()
+        //TakeWhile().detailedSample()
 
 
-//        Operators().range()
-//        Operators().repeat()
 //        Operators().interval()
 //        Operators().intervalWithTakeWhile()
 //        Operators().timer()

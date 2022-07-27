@@ -1,26 +1,27 @@
-package com.vansuita.rxjava.operators
+package com.vansuita.rxjava.operators.creational
 
 import android.util.Log
+import com.vansuita.rxjava.operators.Operator
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.core.Observer
 import io.reactivex.rxjava3.disposables.Disposable
+import java.util.*
 
-class FromArray : Operator() {
+class Just : Operator() {
 
     override fun sample(): Disposable {
-        return Observable.fromArray("First", "Second", "Third")
-            .subscribe { Log.d(TAG, "onNext: $it") }
+        return Observable.just(1, "Two", false, Date()).subscribe { Log.d(TAG, "onNext: $it") }
     }
 
     override fun detailedSample() {
-        val observable = Observable.fromArray("First", "Second", "Third")
+        val observable = Observable.just(1, "Two", false, Date())
 
-        val observer = object : Observer<String> {
+        val observer = object : Observer<Any> {
             override fun onSubscribe(d: Disposable) {
                 Log.d(TAG, "onSubscribe")
             }
 
-            override fun onNext(t: String) {
+            override fun onNext(t: Any) {
                 Log.d(TAG, "onNext: $t")
             }
 

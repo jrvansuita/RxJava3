@@ -11,32 +11,6 @@ import java.util.concurrent.TimeUnit
 class Operators {
 
 
-    fun repeat() {
-        Observable.range(40, 5)
-            .repeat(3)
-            .subscribe({
-                Log.d(TAG, "onNext: $it")
-            }, {
-                Log.d(TAG, "onError $it")
-            }, {
-                Log.d(TAG, "onComplete")
-            })
-    }
-
-    fun interval() {
-        //Funciona pra sempre, até com o app em background
-        Observable
-            .interval(1, TimeUnit.SECONDS)
-            .subscribe({
-                Log.d(TAG, "onNext: $it")
-            }, {
-                Log.d(TAG, "onError $it")
-            }, {
-                Log.d(TAG, "onComplete")
-            })
-    }
-
-
     fun intervalWithTakeWhile() {
         //Funciona enquanto menor ou igual a 10 segundos
         Observable

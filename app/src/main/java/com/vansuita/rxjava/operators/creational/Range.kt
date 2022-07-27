@@ -1,14 +1,18 @@
-package com.vansuita.rxjava.operators
+package com.vansuita.rxjava.operators.creational
 
 import android.util.Log
+import com.vansuita.rxjava.operators.Operator
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.disposables.Disposable
 
 class Range : Operator() {
-    override fun sample(): Disposable {
-        Observable.range(5, 3).subscribe { Log.d(TAG, "onNext: $it") }
 
-        return Observable.range(5, 3)
+    override fun sample(): Disposable {
+        return Observable.range(5, 3).subscribe { Log.d(TAG, "onNext: $it") }
+    }
+
+    override fun detailedSample() {
+        Observable.range(5, 5)
             .subscribe({
                 Log.d(TAG, "onNext: $it")
             }, {
@@ -17,4 +21,5 @@ class Range : Operator() {
                 Log.d(TAG, "onComplete")
             })
     }
+
 }
