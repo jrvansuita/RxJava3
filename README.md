@@ -24,7 +24,7 @@ Observable.just(1, "Two", false, Date()).subscribe { Log.d(TAG, "onNext: $it") }
 
 </details>
 
-<details open><summary><b>Create</b> - <a href="https://reactivex.io/documentation/operators/create.html">Observable.create()</a> </summary>
+<details><summary><b>Create</b> - <a href="https://reactivex.io/documentation/operators/create.html">Observable.create()</a> </summary>
 
 > _Will create a fresh instance of ObservableEmitter every time a subscriber start listening to the scope implementation result.. Check_ <code>Create().sample()</code> [📌](app/src/main/java/com/vansuita/rxjava/operators/creational/Create.kt)
 
@@ -140,6 +140,25 @@ Observable.timer(2, TimeUnit.SECONDS).subscribe { Log.d(TAG, "onNext: delayed by
 ```
 </details>
 
+### Filtering Observables
+
+<details><summary><b>Filter</b> - <a href="https://reactivex.io/documentation/operators/filter.html">Observable.filter()</a> </summary>
+
+> _Filters items emitted by the current Observable. Check_ <code>Filter().sample()</code> [📌](app/src/main/java/com/vansuita/rxjava/operators/filteral/Filter.kt)
+
+```kotlin
+Observable
+    .fromIterable(listOf("Home", "Horse", "Castle", "Game"))
+    .filter { it.startsWith("H") }
+    .subscribe {
+        Log.d(TAG, "onNext: $it")
+    }
+
+//onNext: Home
+//onNext: Horse
+```
+</details>
+
 
 ### Conditionals Operators
 
@@ -167,11 +186,6 @@ Observable
 
 
 ```kotlin   
-   Operators().interval()
-   Operators().intervalWithTakeWhile()
-   Operators().timer()
-   Operators().create()
-   Operators().filter()
    Operators().last()
    Operators().distinct()
    Operators().skip()
