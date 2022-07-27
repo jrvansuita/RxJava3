@@ -1,6 +1,6 @@
 # RxJava3 Study
-Learning about [RX Java 3](https://reactivex.io/documentation/operators.html) 
 
+Learning about [RX Java 3](https://reactivex.io/documentation/operators.html)
 
 #### Operators
 
@@ -10,13 +10,14 @@ Learning about [RX Java 3](https://reactivex.io/documentation/operators.html)
 > _Convert an object or an array of objects into an Observable. Check_ <code>Just().sample()</code> [📌](docs.github.com/pt/get-started)
 
 ```kotlin
-Observable.just(1, "Two", false, Date()).subscribe { Log.d(TAG, "onNext : $it") }
+Observable.just(1, "Two", false, Date()).subscribe { Log.d(TAG, "onNext: $it") }
 
 //onNext : 1
 //onNext : Two
 //onNext : false
 //onNext : Wed Jul 27 15:38:35 GMT-03:00 2022
 ```
+
 </details>
 
 
@@ -26,12 +27,13 @@ Observable.just(1, "Two", false, Date()).subscribe { Log.d(TAG, "onNext : $it") 
 > _Convert any object and data types into Observables. Check_ <code>FromArray().sample()</code> [📌](docs.github.com/pt/get-started)
 
 ```kotlin
-Observable.fromArray("First", "Second", "Third").subscribe { Log.d(TAG, "onNext : $it") }
+Observable.fromArray("First", "Second", "Third").subscribe { Log.d(TAG, "onNext: $it") }
 
 //onNext : First
 //onNext : Second
 //onNext : Third
 ```
+
 </details>
 
 
@@ -40,9 +42,8 @@ Observable.fromArray("First", "Second", "Third").subscribe { Log.d(TAG, "onNext 
 
 
 
- [```Just().sample()```](docs.github.com/pt/get-started) 📌
- 
- 
+[```Just().sample()```](docs.github.com/pt/get-started) 📌
+
 ```kotlin   
   
    Operators().fromArray()

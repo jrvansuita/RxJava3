@@ -2,7 +2,6 @@ package com.vansuita.rxjava
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.vansuita.rxjava.operators.just.Just
 
 class MainActivity : AppCompatActivity() {
 
@@ -12,9 +11,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
+        //Convert an object or an array of objects into an Observable
         //Just().sample()
         //Just().detailedSample()
+
+        //Converts an array into an Observable that emits the items.
         //FromArray().sample()
+        //FromArray().detailedSample()
+
+        //Converts an collection into an Observable that emits the items as sequence.
+        //FromIterable().sample()
+        //FromIterable().detailedSample()
 
 
 //        Operators().fromIterable()
