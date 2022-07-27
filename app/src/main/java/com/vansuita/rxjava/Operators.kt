@@ -1,6 +1,7 @@
 package com.vansuita.rxjava
 
 import android.util.Log
+import com.vansuita.rxjava.operators.Operator.Companion.TAG
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.core.Observer
 import io.reactivex.rxjava3.disposables.Disposable
@@ -11,60 +12,6 @@ import java.util.concurrent.TimeUnit
 
 class Operators {
 
-    companion object {
-        const val TAG = "RXJava"
-    }
-
-    fun just() {
-        val observable = Observable.just(1, 2, 3, 4, 5)
-
-        val observer = object : Observer<Int> {
-            override fun onSubscribe(d: Disposable) {
-                Log.d(TAG, "onSubscribe")
-            }
-
-            override fun onNext(t: Int) {
-                Log.d(TAG, "onNext : $t")
-            }
-
-            override fun onError(e: Throwable) {
-                Log.d(TAG, "onError $e")
-            }
-
-            override fun onComplete() {
-                Log.d(TAG, "onComplete")
-            }
-        }
-
-        observable.subscribe(observer)
-    }
-
-    fun fromArray() {
-        val list = arrayOf(1, 2, 3, 4, 5)
-
-        val observable = Observable.fromArray(list)
-
-        val observer = object : Observer<Array<Int>> {
-            override fun onSubscribe(d: Disposable) {
-                Log.d(TAG, "onSubscribe")
-            }
-
-            override fun onNext(t: Array<Int>) {
-                Log.d(TAG, "onNext : ${t.contentToString()}")
-            }
-
-            override fun onError(e: Throwable) {
-                Log.d(TAG, "onError $e")
-            }
-
-            override fun onComplete() {
-                Log.d(TAG, "onComplete")
-            }
-        }
-
-        observable.subscribe(observer)
-
-    }
 
     fun fromIterable() {
         val list = mutableListOf("One", "Two", "Three")
