@@ -2,7 +2,7 @@ package com.vansuita.rxjava
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.vansuita.rxjava.operators.conditional.TakeWhile
+import com.vansuita.rxjava.operators.creational.Create
 
 class MainActivity : AppCompatActivity() {
 
@@ -32,18 +32,21 @@ class MainActivity : AppCompatActivity() {
         //Repeat().sample()
         //Repeat().detailedSample()
 
-        //Returns an Observable that emits a sequential number every specified interval of time.
+        //Emits a sequential number every specified interval of time.
         //Interval().sample()
         //Interval().detailedSample()
 
         //While the condition is satisfied, emits the items by the Observable
-        TakeWhile().sample()
+        //TakeWhile().sample()
         //TakeWhile().detailedSample()
 
+        //Emits one single time after a specified delay
+        //Timer().sample()
+        //Timer().detailedSample()
 
-//        Operators().interval()
-//        Operators().intervalWithTakeWhile()
-//        Operators().timer()
+        //Will create a fresh instance of ObservableEmitter every time a subscriber start listening to the scope implementation result.
+        Create().sample()
+
 //        Operators().create()
 //        Operators().filter()
 //        Operators().last()

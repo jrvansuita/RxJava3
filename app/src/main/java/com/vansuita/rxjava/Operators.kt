@@ -3,59 +3,12 @@ package com.vansuita.rxjava
 import android.util.Log
 import com.vansuita.rxjava.operators.Operator.Companion.TAG
 import io.reactivex.rxjava3.core.Observable
-import java.util.concurrent.TimeUnit
 
 
 // ->  https://reactivex.io/documentation/operators.html
 
 class Operators {
 
-
-    fun intervalWithTakeWhile() {
-        //Funciona enquanto menor ou igual a 10 segundos
-        Observable
-            .interval(1, TimeUnit.SECONDS)
-            .takeWhile { it <= 10 }
-            .subscribe({
-                Log.d(TAG, "onNext: $it")
-            }, {
-                Log.d(TAG, "onError $it")
-            }, {
-                Log.d(TAG, "onComplete")
-            })
-    }
-
-    fun timer() {
-        Observable
-            .timer(2, TimeUnit.SECONDS)
-            .subscribe({
-                Log.d(TAG, "onNext: $it")
-            }, {
-                Log.d(TAG, "onError $it")
-            }, {
-                Log.d(TAG, "onComplete")
-            })
-    }
-
-    fun create() {
-        Observable.create {
-            try {
-                for (i in 1..10) {
-                    it.onNext(i)
-                }
-
-                it.onComplete()
-            } catch (e: Exception) {
-                it.onError(e)
-            }
-        }.subscribe({
-            Log.d(TAG, "onNext: $it")
-        }, {
-            Log.d(TAG, "onError $it")
-        }, {
-            Log.d(TAG, "onComplete")
-        })
-    }
 
     fun filter() {
         class User(val name: String, val age: Int)
