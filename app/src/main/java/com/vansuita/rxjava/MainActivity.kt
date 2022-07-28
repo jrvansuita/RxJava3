@@ -2,7 +2,7 @@ package com.vansuita.rxjava
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.vansuita.rxjava.operators.filteral.Filter
+import com.vansuita.rxjava.operators.filteral.Last
 
 class MainActivity : AppCompatActivity() {
 
@@ -48,11 +48,18 @@ class MainActivity : AppCompatActivity() {
         //Create().sample()
 
         //Filters items emitted by the current Observable
-        Filter().sample()
+        //Filter().sample()
         //Filter().detailedSample()
 
 
-//        Operators().filter()
+        //Emits only the very first item or empty using a Maybe interface
+        //First().sample()
+        //First().detailedSample()
+
+        //Emits only the very last item or empty using a Maybe interface
+        Last().sample()
+        Last().detailedSample()
+
 //        Operators().last()
 //        Operators().distinct()
 //        Operators().skip()
