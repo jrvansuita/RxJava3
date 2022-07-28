@@ -1,4 +1,4 @@
-package com.vansuita.rxjava.operators.filteral
+package com.vansuita.rxjava.operators.filtering
 
 import android.util.Log
 import com.vansuita.rxjava.operators.Operator

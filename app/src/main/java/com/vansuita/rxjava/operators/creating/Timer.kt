@@ -1,4 +1,4 @@
-package com.vansuita.rxjava.operators.creational
+package com.vansuita.rxjava.operators.creating
 
 import android.util.Log
 import com.vansuita.rxjava.operators.Operator

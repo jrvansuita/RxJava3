@@ -2,7 +2,6 @@ package com.vansuita.rxjava
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.vansuita.rxjava.operators.filteral.Last
 
 class MainActivity : AppCompatActivity() {
 
@@ -57,13 +56,28 @@ class MainActivity : AppCompatActivity() {
         //First().detailedSample()
 
         //Emits only the very last item or empty using a Maybe interface
-        Last().sample()
-        Last().detailedSample()
+        //Last().sample()
+        //Last().detailedSample()
 
-//        Operators().last()
-//        Operators().distinct()
-//        Operators().skip()
-//        Operators().buffer()
-//        Operators().map()
+        //Emits all items that are distinct based on Object.equals(Object) comparison
+        //Distinct().sample()
+        //Distinct().detailedSample()
+
+        //Skips the first count items emitted by the current Observable and emits the remains
+        //Skip().sample()
+        //Skip().detailedSample()
+
+        //Drops a specified number of items from the end of the sequence emitted by the current Observable.
+        //SkipLast().sample()
+        //SkipLast().detailedSample()
+
+        //Emits buffers of items it collects from the current Observable, based on count, timing or boundary defined.
+        //Buffer().sample()
+        //Buffer().detailedSample()
+
+        //Applies a specified function to each item to transform the results of these emit values
+        //Map().sample()
+        //Map().detailedSample()
+
     }
 }

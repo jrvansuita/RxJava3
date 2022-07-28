@@ -1,4 +1,4 @@
-package com.vansuita.rxjava.operators.creational
+package com.vansuita.rxjava.operators.creating
 
 import android.util.Log
 import com.vansuita.rxjava.operators.Operator
@@ -6,17 +6,15 @@ import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.core.Observer
 import io.reactivex.rxjava3.disposables.Disposable
 
-class FromIterable : Operator() {
-
-    override fun <T> with() = listOf("One", "Two", "Three")
+class FromArray : Operator() {
 
     override fun sample(): Disposable {
-        return Observable.fromIterable(this.with<List<String>>())
+        return Observable.fromArray("First", "Second", "Third")
             .subscribe { Log.d(TAG, "onNext: $it") }
     }
 
     override fun detailedSample() {
-        val observable = Observable.fromIterable(this.with<List<String>>())
+        val observable = Observable.fromArray("First", "Second", "Third")
 
         val observer = object : Observer<String> {
             override fun onSubscribe(d: Disposable) {

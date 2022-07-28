@@ -1,22 +1,20 @@
-package com.vansuita.rxjava.operators.creational
+package com.vansuita.rxjava.operators.creating
 
 import android.util.Log
 import com.vansuita.rxjava.operators.Operator
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.disposables.Disposable
-import java.util.concurrent.TimeUnit
 
-class Interval : Operator() {
+class Repeat : Operator() {
     override fun sample(): Disposable {
-        return Observable.interval(1, TimeUnit.SECONDS).subscribe {
-            Log.d(TAG, "onNext: Hit")
+        return Observable.just("My Text").repeat(2).subscribe {
+            Log.d(TAG, "onNext: $it")
         }
     }
 
     override fun detailedSample() {
-        //Funciona pra sempre, até com o app em background
-        Observable
-            .interval(1, TimeUnit.SECONDS)
+        Observable.range(40, 5)
+            .repeat(3)
             .subscribe({
                 Log.d(TAG, "onNext: $it")
             }, {
@@ -25,6 +23,4 @@ class Interval : Operator() {
                 Log.d(TAG, "onComplete")
             })
     }
-
-
 }
