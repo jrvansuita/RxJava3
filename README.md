@@ -140,7 +140,7 @@ Observable.timer(2, TimeUnit.SECONDS).subscribe { Log.d(TAG, "onNext: delayed by
 ```
 </details>
 
-### Filtering Observables
+### Filteral Observables
 
 <details><summary><b>Filter</b> - <a href="https://reactivex.io/documentation/operators/filter.html">Observable.filter()</a> </summary>
 
@@ -156,6 +156,38 @@ Observable
 
 //onNext: Home
 //onNext: Horse
+```
+</details>
+
+<details><summary><b>First</b> - <a href="https://reactivex.io/documentation/operators/first.html">Observable.firstElement()</a> </summary>
+
+> _Emits only the very first item or empty using a Maybe interface. See also Observable.firstOrError(). Check_ <code>First().sample()</code> [📌](app/src/main/java/com/vansuita/rxjava/operators/filteral/First.kt)
+
+```kotlin
+Observable
+    .fromArray("Yellow", "Blue", "Green", "Black")
+    .firstElement()
+    .subscribe {
+        Log.d(TAG, "onNext: $it")
+    }
+
+//onNext: Yellow
+```
+</details>
+
+<details><summary><b>Last</b> - <a href="https://reactivex.io/documentation/operators/last.html">Observable.lastElement()</a> </summary>
+
+> _Emits only the very last item or empty using a Maybe interface. See also Observable.lastOrError(). Check_ <code>Last().sample()</code> [📌](app/src/main/java/com/vansuita/rxjava/operators/filteral/Last.kt)
+
+```kotlin
+Observable
+    .fromArray("Yellow", "Blue", "Green", "Black")
+    .lastElement()
+    .subscribe {
+        Log.d(TAG, "onNext: $it")
+    }
+
+//onNext: Black
 ```
 </details>
 
@@ -181,17 +213,6 @@ Observable
 ```
 </details>
 
-
------
-
-
-```kotlin   
-   Operators().last()
-   Operators().distinct()
-   Operators().skip()
-   Operators().buffer()
-   Operators().map()
-```
 
 ### References
 
