@@ -279,7 +279,7 @@ Observable
 
 <details><summary><b>Buffer</b> - <a href="https://reactivex.io/documentation/operators/buffer.html">Observable.buffer()</a> </summary>
 
-> _Emits buffers of items it collects from the current Observable, based on count, timing or boundary defined. Check_ <code>Buffer().sample()</code> [📌](app/src/main/java/com/vansuita/rxjava/operators/conditional/Buffer.kt)
+> _Emits buffers of items it collects from the current Observable, based on count, timing or boundary defined. Check_ <code>Buffer().sample()</code> [📌](app/src/main/java/com/vansuita/rxjava/operators/transforming/Buffer.kt)
 
 ```kotlin
 Observable.just("Mother", "Father", "Daughter", "Son")
@@ -295,7 +295,7 @@ Observable.just("Mother", "Father", "Daughter", "Son")
 
 <details><summary><b>Map</b> - <a href="https://reactivex.io/documentation/operators/map.html">Observable.map()</a> </summary>
 
-> _Applies a specified function to each item to transform the results of these emit values. Check_ <code>Map().sample()</code> [📌](app/src/main/java/com/vansuita/rxjava/operators/conditional/Map.kt)
+> _Applies a specified function to each item to transform the results of these emit values. Check_ <code>Map().sample()</code> [📌](app/src/main/java/com/vansuita/rxjava/operators/transforming/Map.kt)
 
 ```kotlin
 Observable.fromArray(2, 4, 2)
