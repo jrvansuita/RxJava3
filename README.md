@@ -291,6 +291,7 @@ Observable.just("Mother", "Father", "Daughter", "Son")
 //onNext: [Mother, Father]
 //onNext: [Daughter, Son]
 ```
+</details>
 
 <details><summary><b>Map</b> - <a href="https://reactivex.io/documentation/operators/map.html">Observable.map()</a> </summary>
 
@@ -307,13 +308,13 @@ Observable.fromArray(2, 4, 2)
 //onNext: ####
 //onNext: ##
 ```
+</details>
 
 ### References
 
 - Github Repo [@github.com/ReactiveX/RxJava](https://github.com/ReactiveX/RxJava)
 - Documentation [@reactivex.io/documentation](https://reactivex.io/documentation/operators.html)
 - Course I - [@udemy.com/course/rxjava-rxandroid-i](https://www.udemy.com/course/rxjava-rxandroid-i)
-- Course II
-  - [@udemy.com/course/rxjava-rxandroid-ii](https://www.udemy.com/course/rxjava-rxandroid-ii/)
+- Course II - [@udemy.com/course/rxjava-rxandroid-ii](https://www.udemy.com/course/rxjava-rxandroid-ii/)
 
 
